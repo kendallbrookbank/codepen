@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  <div id="wrapper">
+  <div id="quote-box">
+    <div id="text">
+      
+      <body onload= "newQuote()"></body>
+    <div id="quoteDisplay">
+        <!--Quotes will display here-->
+      </div> 
+     
+ <button onClick= "newQuote()" style="background-color: black; color: white">New Quote</button>
+  
+ <a href="#tweet-quote" class="fa fa-twitter"></a>
+      </div>
+    </div>
+    </div>
+  </html>
+  
+  @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+
+body {
+  background-color: black;
+  font-size: 40px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+a { 
+  margin: 30px;
+  text-decoration: none;
+  color: black;
+}
+#quote-box {
+  border-radius:3px;
+  position:center;
+  margin:8% auto auto auto;
+  width:450px;
+  padding:40px 50px;
+  display:table;
+  background-color: white;
+  color:black;
+}
+ .quote-text {
+    width: 450px;
+    height: auto;
+    clear: both;
+    padding-top: 20px;
+    font-size: 40px;
+    text-align: right;
+   color: black;
+}
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+}
+.fa-twitter {
+  background: black;
+  color: white;
+  border-radius: 50px;
+  padding: 10px;
+}
+
+var quotes = [
+  
+'Change the world by being yourself. -Amy Poehler',
+'Try to be a rainbow in someone’s cloud. -Maya Angelou',
+'Wanting to be someone else is a waste of who you are. -Kurt Cobain',
+'May your choices reflect your hopes, not your fears. -Nelson Mandela',
+'Happiness depends upon ourselves. -Aristotle',
+'When words fail, music speaks. -Shakespeare'
+];
+
+function newQuote() {
+var randomNumber = Math.floor(Math.random() * (quotes.length));
+document.getElementById('quoteDisplay').innerHTML = quotes[randomNumber];
+}
