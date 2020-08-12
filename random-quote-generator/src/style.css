@@ -33,16 +33,8 @@ a {
     text-align: right;
    color: black;
 }
-.fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 35px;
-  text-align: center;
-  text-decoration: none;
-}
-.fa-twitter {
-  background: black;
-  color: white;
-  border-radius: 50px;
-  padding: 10px;
+.twitter-share-button {
+  margin: 25px;
+  padding: 1px;
+  float: right;
 }
