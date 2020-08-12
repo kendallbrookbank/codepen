@@ -1,5 +1,5 @@
 # Random Quote Generator 
 
-A Pen created on CodePen.io. Original URL: [https://codepen.io/kendallbrookbank/pen/ExPqZyj](https://codepen.io/kendallbrookbank/pen/ExPqZyj).
+A Pen created on CodePen.io. ["https://codepen.io/kendallbrookbank/pen/ZEWGQrg"]
 
 
