@@ -1,1 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  </head>
+  
+  <!-- header-->
+  <body>
+    <h2><ul>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#portfolio">Porfolio</a></li>
+    <li><a href="#about">About</a></li>
+    </ul></h2>
+  
+   <!--starting page-->
+    <div class="container-fluid">
+      <div class="row cover top">
+          <div class="row">
+            <div class="headline">
+              <div class="wrapper">
+ <h2 class="typing-name">kendall brookbank</h2>
+<h4>Front-
+  end Web Developer</h4>
+              
+              <a href="https://ibb.co/tZCwmqs"><img src="https://i.ibb.co/mvzrD9q/sunrise.png" alt="sunrise" border="0" style="width:400px;height:500px;"></a>    
+      </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  <!--about me section-->            
+   <div class="container-fluid">
+              <div class="row">
+ <a href="#about"></a>
+ <div id="about" class="row cover">
+  <h2 class="text-center">About Me</h2>
+   <div class="row"></div>
+  <br>
+<a href="https://ibb.co/5vnCcbw"><img src="https://i.ibb.co/K7LByTS/Screenshot-20200630-132742.png" alt="Screenshot-20200630-132742" border="0" style="width: 300px;height:400px;"></a>
+<br>
+   <br>
+<p class="text-centered">
+I'm a Cincinnati native, self-taught web developer. I'm certified through FreeCodeCamp and the Grasshopper App. The most common tools I use for web development are HTML5, CSS3, JavaScript and Bootstrap.</p>
+                </div>
+     </div>
+            </div>
+    </div>
+              <!-- end of about me section-->
+<!-- beginning of portfolio secion-->
+    
+ <div class="container-fluid">
+  <div id="portfolio">
+  <div class="row portfolio-projects">
+     <div class="row">
+    <h2><div class="text-center">Portfolio</div></h2>
+        <!-- add images of each project above each button or add some info about what I used-->
+   <p>Here are a few examples of my work, my full portfolio can be found in the contact section on my Codepen profile.</p> 
+       <br>
+        <h5>Minimalist Quote Generator</h5>
+        <button onclick="document.location='https://codepen.io/kendallbrookbank/pen/ZEWGQrg'">View</button>
+        
+        <h5>Cup of Coffee</h5>
+        <button onclick="document.location='https://codepen.io/kendallbrookbank/pen/KKzVVpX'">View</button>
+        
+        <h5>Monochromatic Calculator</h5>
+        <button onclick="document.location='https://codepen.io/kendallbrookbank/pen/NWNGMKj'">View</button>
+      </div>
+    </div>
+   </div>  
+                </div>
 
+ <!-- bottom of page with contact info-->
+   <div class="container-fluid">     
+   <div class="row"> 
+     <div class="col-12">
+ <div id="contact">
+   <h2 class="text-center contact-header">Contact Me</h2>
+   <br>
+ <p class="contact-email" style="width:100%;text-align:center;">kendallgardt@gmail.com</p>
+   <br>
+   <p> or find me on:</p>
+   
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <a href="https://www.freecodecamp.org/kendallbrookbank" class="fa fa-fire"> FreeCodeCamp</a>
+<a href="https://github.com/kendallbrookbank">GitHub</a>
+   <div class="fa fa-github"></div>
+
+     <a href="https://www.linkedin.com/in/kendall-brookbank-a1996a83/">Linkedin</a>
+   <div class="fa fa-linkedin-square"></div>
+             
+              </div>
+     </div>
+     </div>
+   </div>
+     </body>
+<footer class="footer" style="text-align:center;">
+  <button onClick="scrollWin()" style="background-color:peru;color:sienna;">Back To Top</button>
+              <script>
+                function scrollWin() {
+    window.scrollTo(0, 100);
+  }  
+              </script>
+    </footer>
+          
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans&display=swap');
+
+.about-tools ul li, .contact-social-icons ul a li {
+  text-align: center;
+  display: inline;
+}
+/* this is the begining of the page with my name etc. */
+.headline {
+  background-color: peru;
+  color: sienna;
+  height: 1000px;
+  padding: 200px;
+  width: 100%;
+}
+
+body {
+  font-family: 'PT Sans', sans-serif;
+  background-color: tan;
+  margin: auto;
+  float: center;
+  width: 100%;
+}
+.centered {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+* {
+  box-sizing: border-box; }
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+html {
+  position: relative;
+  height: 100%; }
+
+/* this is for my nav bar/ about, portfolio, contact */
+ul {
+  font-family: 'PT Sans', sans-serif;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+li {
+  display: inline;
+  color: tan;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+li a{
+  font-family: 'PT Sans', sans-serif;
+  text-decoration: none;
+  display: inline block;
+  float: right;
+  padding: 8px;
+  background-color: sienna;
+  color: tan;
+}
+/* this is for the typing effect on my name*/
+.typing-name {
+  width: 100%;
+  animation: typing 3s steps(18);
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 0px solid;
+  font-family: 'PT Sans';
+  font-size: 30px;
+  background-color: peru;
+  color: sienna;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+#about {
+  font-family: 'PT Sans', sans-serif;
+  background-color: sienna;
+  color: tan;
+  font-size: 25px;
+  text-align: center;
+  padding: 50px;
+  height: 1000px;
+  width: 100%
+}
+#portfolio {
+  background-color: peru;
+  color: sienna;
+  font-size: 25px;
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+  padding: 70px;
+  height: 1000px; 
+  margin: auto;
+  width: 100%;
+}
+
+button {
+ background-color: sienna;
+  color: tan;
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 25px;
+  border-radius: 8px;
+}
+#contact {
+  font-family: 'PT Sans', sans-serif;
+  text-align: center;
+  font-size: 25px;
+  padding: 100px;
+  background-color: sienna;
+  color: tan;
+  overflow: hidden;
+  width: 100%;
+}
+.contact-social-icons p {
+  color: sienna; }
+.contact-social-icons ul a {
+  color: sienna;
+  list-style: none; }
+.contact-social-icons ul a li {
+  display: inline-block;
+  padding: 60px; }
+a {
+  color: tan;
+}
+.footer {
+  padding: 70px 0;
+  font-size: 15px;
+  width: 100%;
+}
+</style>
+<script>
+$(document).ready(function() {
+                  });
+                  </script>
