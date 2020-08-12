@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
 
 body {
-  background-color: black;
+  background-color: background-color: #f9ea8f;
+background-image: linear-gradient(315deg, #f9ea8f 0%, #aff1da 74%);
   font-size: 40px;
   font-weight: 500;
   display: flex;
