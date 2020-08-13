@@ -1,0 +1,257 @@
+<div class='wrapper'>
+  <div class='align-wrap'>
+    <div class='align'>
+      <div class='group'>
+        <div class='left'>
+          <h3 class='break' id="break-label">break</h3>
+          <h2><a id='break-decrement' href="#">-</a><span id='break-length'></span><a id='break-increment' href="#">+</a></h2>
+        </div>
+        <url='http://soundbible.com/535-Alarm-Clock.html' id="beep">
+        <div class='right'>
+          <h3 class='session' id="session-label">session</h3>
+          <h2><a id='session-decrement' href="#">-</a><span id='session-length'></span><a id='session-increment' href="#">+</a></h2>
+        </div>
+      </div>
+      <div class='clock'>
+        <h1 class='timer' id='timer-label'></h1>
+        <button class='button' id='start'>start</button>
+        <button class='button left' id='pause'>pause</button>
+        <button class='button right' id='reset'>reset</button>
+        <button class='button' id='startBreak'>start</button>
+        <button class='button left' id='pauseBreak'>pause</button>
+        <button class='button right' id='resetBreak'>reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400');
+
+body {
+    background: #5F9EA0;
+    padding: 0;
+    margin: 0;
+}
+h1,
+h2,
+h3 {
+    color: white;
+    font-family: 'Lato';
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+}
+a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.7;
+}
+a:hover {
+    opacity: 1;
+}
+.wrapper {
+    margin: 0 auto;
+    width: 300px;
+    height: 100vh;
+}
+.align-wrap {
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+.align {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+}
+.group {
+    height: 55px;
+}
+.left {
+    float: left;
+}
+.right {
+    float: right;
+}
+.clock {
+    width: 300px;
+    height: 300px;
+    vertical-align: middle;
+    display: table-cell;
+}
+.timer {
+    padding: 110px 0;
+    font-weight: 400;
+    font-size: 4em;
+}
+.button {
+    width: 100px;
+    height: 45px;
+    border: solid thin white;
+    text-transform: uppercase;
+    background: transparent;
+    color: white;
+}
+.button:hover {
+    background: white;
+    color: #00ff00;
+}
+.button:focus {
+    outline: none;
+}
+</style>
+<script>
+'use strict';
+
+var countdown;
+var delay = 1000;
+
+var session = 25;
+var rest = 5;
+var sessionSeconds = session * 60;
+var restSeconds = rest * 60;
+
+var audioSession = new Audio('http://soundbible.com/535-Alarm-Clock.html');
+var audioBreak = new Audio('http://soundbible.com/1251-Beep.html');
+
+
+var sessionMinutes = document.getElementById('session-length'),
+  sessionMinus = document.getElementById('session-decrement'),
+  sessionPlus = document.getElementById('session-increment'),
+  breakMinutes = document.getElementById('break-length'),
+  breakMinus = document.getElementById('break-decrement'),
+  breakPlus = document.getElementById('break-increment'),
+  timer = document.getElementById('timer-label'),
+  startSessionButton = document.getElementById('start'),
+  pauseSessionButton = document.getElementById('pause'),
+  resetSessionButton = document.getElementById('reset'),
+  startBreakButton = document.getElementById('startBreak'),
+  pauseBreakButton = document.getElementById('pauseBreak'),
+  resetBreakButton = document.getElementById('resetBreak');
+
+sessionMinutes.innerHTML = ' ' + session + ' ';
+breakMinutes.innerHTML = ' ' + rest + ' ';
+timer.innerHTML = session + ':00';
+displaySession('', 'none', 'none');
+displayBreak('none', 'none', 'none');
+
+function startCountdown(seconds) {
+  var minutes = parseInt(seconds / 60);
+  var remainingSeconds = seconds % 60;
+  if (remainingSeconds < 10) remainingSeconds = '0' + remainingSeconds;
+  timer.innerHTML = minutes + ':' + remainingSeconds;
+}
+
+
+function startSession() {
+  audioSession.play();
+  timer.innerHTML = 'session';
+  clearInterval(countdown);
+  countdown = setInterval(function() {
+    startCountdown(sessionSeconds);
+
+    if (sessionSeconds === 0) {
+      clearInterval(countdown);
+      restSeconds = rest * 60;
+      displaySession('none', 'none', 'none');
+      startBreak();
+    } else sessionSeconds--;
+  }, delay);
+  displaySession('none', '', '');
+}
+
+function startBreak() {
+  audioBreak.play();
+  timer.innerHTML = 'break';
+  clearInterval(countdown);
+  countdown = setInterval(function() {
+    startCountdown(restSeconds);
+
+    if (restSeconds === 0) {
+      clearInterval(countdown);
+      sessionSeconds = session * 60;
+      displayBreak('none', 'none', 'none');
+      startSession();
+    } else restSeconds--;
+  }, delay);
+  displayBreak('none', '', '');
+}
+
+function pauseSession() {
+  clearInterval(countdown);
+  displaySession('', 'none', 'none');
+  startSessionButton.innerHTML = 'resume';
+}
+
+function pauseBreak() {
+  clearInterval(countdown);
+  displayBreak('', 'none', 'none');
+  startBreakButton.innerHTML = 'resume';
+}
+
+function resetSession() {
+  pauseSession();
+  sessionSeconds = session * 60;
+  timer.innerHTML = session + ':00';
+  startSessionButton.innerHTML = 'start';
+}
+
+function resetBreak() {
+  pauseBreak();
+  restSeconds = rest * 60;
+  timer.innerHTML = rest + ':00';
+  startBreakButton.innerHTML = 'start';
+}
+
+function subtractSession() {
+  session--;
+  if (session < 0) session = 0;
+  sessionSeconds = session * 60;
+  sessionMinutes.innerHTML = ' ' + session + ' ';
+}
+
+function subtractBreak() {
+  rest--;
+  if (rest < 0) rest = 0;
+  restSeconds = rest * 60;
+  breakMinutes.innerHTML = ' ' + rest + ' ';
+}
+
+function addSession() {
+  session++;
+  sessionSeconds = session * 60;
+  sessionMinutes.innerHTML = ' ' + session + ' ';
+}
+
+function addBreak() {
+  rest++;
+  restSeconds = rest * 60;
+  breakMinutes.innerHTML = ' ' + rest + ' ';
+}
+
+function displaySession(start, pause, reset) {
+  startSessionButton.style.display = start;
+  pauseSessionButton.style.display = pause;
+  resetSessionButton.style.display = reset;
+}
+
+function displayBreak(start, pause, reset) {
+  startBreakButton.style.display = start;
+  pauseBreakButton.style.display = pause;
+  resetBreakButton.style.display = reset;
+}
+
+sessionMinus.addEventListener('click', subtractSession);
+sessionPlus.addEventListener('click', addSession);
+breakMinus.addEventListener('click', subtractBreak);
+breakPlus.addEventListener('click', addBreak);
+startSessionButton.addEventListener('click', startSession);
+pauseSessionButton.addEventListener('click', pauseSession);
+resetSessionButton.addEventListener('click', resetSession);
+startBreakButton.addEventListener('click', startBreak);
+pauseBreakButton.addEventListener('click', pauseBreak);
+resetBreakButton.addEventListener('click', resetBreak);
+</script>
