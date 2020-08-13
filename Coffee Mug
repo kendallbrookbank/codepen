@@ -1,0 +1,75 @@
+<body>
+<div class="box-canvas">
+  <div class="handle"></div>
+  <div class="mug-body"></div>
+  </div>
+</body>
+<style>
+:root {
+  --background-color: #F5DEB3;
+  --mug-color: #DEB887;
+  --coffee-color: #8B4513;
+}
+body {
+  background: var(--background-color);
+}
+.box-canvas {
+  position: relative;
+  margin: auto;
+  display: block;
+  margin-top: 8%;
+  margin-bottom: 8%;
+  width: 600px;
+  height: 600px;
+  background: var(--background-color);
+}
+.mug-body {
+  position: absolute;
+  left: 190px;
+    top: 200px;
+    width: 220px;
+    height: 260px;
+  background: var(--mug-color);
+  border-radius: 0 0 40% 40%;
+}
+.mug-body::before {
+  content: '';
+  position: absolute;
+  top: -45px;
+  height: 50px;
+  width: 180px;
+  left: 0px;
+border-radius: 50%;
+  border: 20px solid var(--mug-color);
+  background: var(--coffee-color);
+}
+.mug-body::after {
+  content: '';
+  position: absolute;
+  height: 100px;
+  width: 20px;
+  left: 150px;
+  top: 10px;
+}
+/* Handle */
+.handle {
+  position: absolute;
+  right: 110px;
+    top: 220px;
+    height: 120px;
+    width: 80px;
+  border: 30px solid var(--mug-color);
+  border-radius: 0 50% 50% 0;
+}
+/* Shadow under mug */
+.handle::after {
+  content: '';
+  position: absolute;
+  top: 130px;
+  left: -200px;
+  background: rgba(205, 133, 63);
+  width: 250px;
+  height: 100px;
+  border-radius: 50%;
+}
+</style>
