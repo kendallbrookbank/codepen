@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Meet the Team</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style>
+h1{
+ background: Darkgrey;
+  color: white;
+}
+h1, h2 {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid black;
+}
+.card-body {
+  text-align: center;
+}
+</style>
+<body>
+  <h1>Meet the Team</h1>
+  <div class="container-fluid">
+    <div class="row">
+      
+      <div class="col">
+  <h2 style="background:Maroon;color:white;">Henry</h2>
+  <div class="card">
+    <div class="card-body">
+    <h5>CEO</h5><br>
+      <p>Founded the company in 1986. Would choose dogs over humans any day.</p></div>
+        </div>
+  </div>
+    <div class="col">
+  <h2 style="background:orchid;color:white;">Sharon</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5>HR Deparment</h5><br>
+      <p>Cincinnati Native. Been with the company since 1991. Loves Taco's and Reality TV</p>
+
+      </div>
+      </div>
+    </div>
+  <div class="col">
+  <h2 style="background:rosybrown;color:white;">Jessie</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5>General Manager</h5><p>From L.A. orginally but has lived all over the U.S. Addicted to licorice.</div>
+  </div>
+  </div>
+    </div>
+  </div>
+  
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+  <h2 style="background:chocolate;color:white;">Mark</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5>Accountant</h5>
+      <p>Loves to bowl on the weekends and watch live music.</p>
+      </div>
+  </div>
+        </div>
+      <div class="col">
+  <h2 style="background:teal;color:white;">Sandra</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5>Sr. Project Manager</h5><p>From Seattle and can have no less than two coffee's a day to function.</div>
+  </div>
+        </div>
+        <div class="col">
+  <h2 style="background:DarkGreen;color:white;">Logan</h2>
+  <div class="card">
+    <div class="card-body">
+      <h5>Intern</h5>
+      <p>Always commutes to work on his bike and loves to spend time outdoors on the weekends.</p>
+      </div>
+          </div>
+        </div>
+  </div>
+</body>
+</html>
