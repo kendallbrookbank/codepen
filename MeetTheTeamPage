@@ -32,7 +32,7 @@ h1, h2 {
   <h2 style="background:Maroon;color:white;">Henry</h2>
   <div class="card">
     <div class="card-body">
-    <h5>CEO</h5><br>
+    <h5>CEO</h5>
       <p>Founded the company in 1986. Would choose dogs over humans any day.</p></div>
         </div>
   </div>
@@ -40,7 +40,7 @@ h1, h2 {
   <h2 style="background:orchid;color:white;">Sharon</h2>
   <div class="card">
     <div class="card-body">
-      <h5>HR Deparment</h5><br>
+      <h5>HR Deparment</h5>
       <p>Cincinnati Native. Been with the company since 1991. Loves Taco's and Reality TV</p>
 
       </div>
